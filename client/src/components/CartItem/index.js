@@ -1,11 +1,15 @@
 import React from 'react';
-import { useStoreContext } from "../../utils/GlobalState";
+//import { useStoreContext } from "../../utils/GlobalState"; - oh boy no more global state, it's redux time
+import { useDispatch, useSelector } from 'react-redux';
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 
 const CartItem = ({ item }) => {
 
-  const [, dispatch] = useStoreContext();
+  // const [, dispatch] = useStoreContext(); - haha why would we need this? REDUX!
+  // also state is unused here, but here is the line of code if you wanna see it for the 6th time:
+  // const state = useSelector((state) => state);
+  const dispatch = useDispatch();
 
   const removeFromCart = item => {
     dispatch({

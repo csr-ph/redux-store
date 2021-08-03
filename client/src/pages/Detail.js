@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from '@apollo/react-hooks';
 
 import Cart from "../components/Cart";
-import { useStoreContext } from "../utils/GlobalState";
+//import { useStoreContext } from "../utils/GlobalState"; - man it's fun commenting these out in favor of REDUXXXX~!
+import { useDispatch, useSelector } from "react-redux";
 import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
@@ -15,7 +16,9 @@ import { idbPromise } from "../utils/helpers";
 import spinner from '../assets/spinner.gif'
 
 function Detail() {
-  const [state, dispatch] = useStoreContext();
+  //const [state, dispatch] = useStoreContext(); - what's that? no more global state? that's right, REDUX!
+  const state = useSelector((state) => state);
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   const [currentProduct, setCurrentProduct] = useState({});

@@ -8,9 +8,9 @@ import { idbPromise } from '../../utils/helpers';
 
 function CategoryMenu() {
   //const [state, dispatch] = useStoreContext(); - whoop dee doo, redux is here for you
-  const state = useSelector((state) => state);
+  
   const dispatch = useDispatch();
-
+  const state = useSelector((state) => state);
   const { categories } = state;
 
   const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);

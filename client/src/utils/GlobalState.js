@@ -23,7 +23,7 @@ const StoreProvider = ({ value = [], ...props }) => {
  // return useContext(StoreContext); - don't need these anymore, they were replaced with redux
 }; */
 
-// basically the entire area above here is no longer going to be here, it's going to be in a separate store.js file
+// basically the entire area above here is no longer going to be here
 
 export default function StoreProvider(props) {
   return <Provider store={store} {...props} />
